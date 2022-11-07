@@ -1,118 +1,38 @@
-<?php 
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
- ?>
-<!DOCTYPE html>
-<html lang="pt">
-  <head>
-      <title>SS - A pronta entrega</title>
-   <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<br><br><br>
+<?php
+require_once 'header.php';
+require_once 'conexao/conexao.php';
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-  <script type="text/javascript">
-          var userAgent = navigator.userAgent.toLowerCase();
-          var devices = new Array('nokia','iphone','blackberry','sony','lg',
-          'htc_tattoo','samsung','symbian','SymbianOS','elaine','palm',
-          'series60','windows ce','android','obigo','netfront',
-          'openwave','mobilexplorer','operamini');
-          var url_redirect = 'm';
-          function mobiDetect(userAgent, devices) {
-          for(var i = 0; i < devices.length; i++) {
-          if (userAgent.search(devices[i]) > 0) {
-          return true;
-          }
-          }
-          return false;
-          }
-
-          if (mobiDetect(userAgent, devices)) {
-          window.location.href = url_redirect;
-          }
-          </script>
-  
-  </head>
-  <body>
-    <div class="">
-        <nav  class="navbar fixed-top navbar-expand-lg navbar-light "style="background-color: #00FA9A">
-        <a class="navbar-brand" href="index.php">Serralheria Serrano</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
-      </li>
-     
-     <li class="nav-item">
-        <a class="nav-link" href="contato.php">Contato</a>
-      </li>
-       <li class="nav-item">
-        <a class="nav-link" href="portoes.php">Portões</a>
-      </li>
-       <li class="nav-item">
-        <a class="nav-link" href="churrasqueiras.php">Churrasqueiras</a>
-      </li>
-    
-  
-    </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
-  </div>
-      </nav><br><br><br>
-  <div style="margin-left: 10px">
-                         <?php
-                         require_once 'adm/conexao.php';
-
-                          $sql= "SELECT * FROM portoes order by id desc";
-                          $resultadosql = $conexao->query($sql);
-                          $vetorRegistros = $resultadosql->fetch_all(MYSQLI_ASSOC);
-
-      ?>  
-      <?php foreach ($vetorRegistros as $key) { 
-
-          if ($key['disponibilidade'] == "entrega") {
-           
-    
-              
-              ?>
-
-          
-
-     
-      <img src="<?=$key['foto'];?>" class="img-fluid" alt="Responsive image">
-      <h5>Código: <?=$key["id"];?></h5>
-      <p>Descrição: <?=$key["descricao"];?></p>
-      <h1>Valor R$:  <?=$key["valor"];?></h1>
-     
-      <a href="https://api.whatsapp.com/send?text=http://serralheriaserrano.rf.gd/?i=<?=$key['foto'];?>" >Compartilhar No Whatsapp</a>
-     
-      <hr>
-      <?php
+?>
+<h1 style="text-align:center; margin-bottom: 10px; ">Produtos A pronta entrega</h1>
+<div class="row">
+  <?php
 
 
-       }
-     }
+  $sql = "SELECT * FROM portoes order by id desc";
+  $resultadosql = $conexao->query($sql);
+  $vetorRegistros = $resultadosql->fetch_all(MYSQLI_ASSOC);
 
-          ?>
+  foreach ($vetorRegistros as $key) {
+
+    if ($key['disponibilidade'] == "entrega") {
+
+  ?>
+      <div class="coluna" style="margin:10px ;">
+        <img src="<?= $key['foto']; ?>" class="img-fluid" alt="Responsive image">
+       
+        <p>Descrição: <?= $key["descricao"]; ?></p>
+        <h3>Valor R$: <?= $key["valor"]; ?></h3>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
+            <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z" />
+          </svg>
+        <a href="https://api.whatsapp.com/send?phone=5517997920429&text=http://localhost:8085/?id=<?= $key['id']; ?>" target="blank">Mais informações</a>
+      </div>
+  <?php    } //else {
+    // echo "<h4 style='background-color:red;'>Nenhum produto a pronta entrega disponível</h4>";
+    //}
+  }
+
+  ?>
 </div>
-          <p>Todos os direitos reservados a ©Copyright Serralheria Serrano by Wian Clodaldo</p>
-          <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
-        
-
-          <!-- Option 2: jQuery, Popper.js, and Bootstrap JS
-          <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-          <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-          <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
-    -->
-    </div>
-  </body>
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-          <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-</html>
+<?php require_once "footer.php"; ?>

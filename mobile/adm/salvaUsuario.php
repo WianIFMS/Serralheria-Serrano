@@ -4,7 +4,7 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 //require_once"autoload.php";
-require_once"conexao.php";
+require_once"../conexao/conexao.php";
 
 var_dump($_POST);
 

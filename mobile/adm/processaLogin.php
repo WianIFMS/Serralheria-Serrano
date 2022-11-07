@@ -3,7 +3,7 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 session_start();
-include_once "conexao.php";
+include_once "../../conexao/conexao.php";
 
 $email = $_POST["email"];
 $senha = $_POST["senha"];
@@ -22,7 +22,7 @@ if(!$email || !$senha)
     exit;
 }
 
-$result = mysqli_query($conexao,"SELECT * FROM usuarios WHERE email='$email' and senha = '$senha' LIMIT 1") or die(error);
+$result = mysqli_query($conexao,"SELECT * FROM usuarios WHERE email='$email' and senha = '$senha' LIMIT 1") or die();
 
 if(mysqli_num_rows($result) > 0 )
 {

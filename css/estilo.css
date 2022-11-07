@@ -1,14 +1,25 @@
-.coluna{
+.coluna {
   float: left;
-  width: 33.33%;
+  width: 30%;
 }
+
 .row::after {
   content: "";
   clear: both;
   display: table;
 }
+
 @media screen and (max-width: 500px) {
   .column {
     width: 100%;
   }
+}
+
+#fotoPrincipal {
+  width: 100%;
+  height: 250px;
+}
+
+ #nomes{
+color:black;
 }
