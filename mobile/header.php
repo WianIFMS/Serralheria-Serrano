@@ -22,29 +22,7 @@ session_start();
 
 <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-  <script type="text/javascript">
-    var userAgent = navigator.userAgent.toLowerCase();
-    var devices = new Array('nokia', 'iphone', 'blackberry', 'sony', 'lg',
-      'htc_tattoo', 'samsung', 'symbian', 'SymbianOS', 'elaine', 'palm',
-      'series60', 'windows ce', 'android', 'obigo', 'netfront',
-      'openwave', 'mobilexplorer', 'operamini');
-    var url_redirect = 'mobile';
 
-    function mobiDetect(userAgent, devices) {
-      for (var i = 0; i < devices.length; i++) {
-        if (userAgent.search(devices[i]) > 0) {
-          return true;
-        }
-      }
-      return false;
-    }
-
-    if (mobiDetect(userAgent, devices)) {
-      window.location.href = url_redirect;
-    }
-
-    
-  </script>
   <style>
     .nav-link{
       color: white;
