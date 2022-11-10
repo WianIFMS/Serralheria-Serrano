@@ -1,67 +1,258 @@
-
-<?php 
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
- ?>
-<!DOCTYPE html>
-<html lang="pt">
-  <head>
-       <title>SS - Contato </title>
-       <link rel="stylesheet" type="text/css" href="css/estilo.css">
-              <!-- Required meta tags -->
-              <meta charset="utf-8">
-              <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-              <!-- Bootstrap CSS -->
-              <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-          <link rel="icon" type="imagem/jpg" href="img/fiv.jpg">
-          <link rel="shotcut icon" type="imagem/jpg" href="img/fiv.jpg">
-           
-  </head>
-  <body>
-    <div class=" container">
-     
-       <nav class="navbar fixed-top navbar-expand-lg navbar-light " style="background-color: #00FA9A">
-  <a class="navbar-brand" href="index.php">Serralheria Serrano</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
-      </li>
-       <li class="nav-item">
-        <a class="nav-link" href="portoes.php">Portões</a>
-      </li>
-       <li class="nav-item">
-        <a class="nav-link" href="churrasqueiras.php">Churrasqueiras</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="a-pronta-entrega.php">Produtos a pronta entrega</a>
-      </li>
-      
-    
-     
-    </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
-  </div>
-</nav>
-
 <br><br><br>
-<h1>Contato:</h1>
-<br><br><br>
-    
-
+<?php
+require_once 'header.php';
+?>
+ <h1 style="text-align:center" >  Contato</h1>
+ 
   
-     <p>Todos os direitos reservados a ©Copyright Serralheria Serrano by Wian Clodaldo</p>
-    </div>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-          <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-  </body>
+    <head>
+        <title>Serralheria Serrano - Contato</title>
+        <meta charset="utf-8">
+
+        <style>
+            html, body {
+                height: 100%;
+                margin: 0;
+                font-family: 'Roboto', sans-serif;
+            }
+
+            p, span {
+                color: #ffffff;
+            }
+
+            h1 {
+                color: #ffffff;
+                font-size: 28px;
+            }
+
+            h2 {
+                color: #333333;
+                font-size: 22px;
+            }
+
+            input, select, textarea, button {
+                width: 100%;
+                padding: 10px 15px;
+                margin: 10px 0px 10px 0px;
+                box-sizing: border-box;
+                border-radius: 3px;
+                background-color: transparent;
+                color: #333;
+            }
+
+            .texto-branco {
+                color: #ffffff;
+            }
+
+            .borda-branca {
+                border: solid 1px #fff;
+            }
+
+            .borda-preta {
+                border: solid 1px #333;
+            }
+
+            button {
+                background-color: #7ab829;
+                cursor: pointer;
+                color: #fff;
+            }
+
+            button:hover {
+                background-color: #6ea22c;
+            }
+
+            ::placeholder {
+                color: #333333;
+                opacity: 1;
+            }
+
+            :-ms-input-placeholder {
+                color: #333333;
+            }
+
+            ::-ms-input-placeholder {
+                color: #333333;
+            }
+
+            .topo {
+                width: 100%;
+                background-color: #f8f8f8;
+                position: absolute;
+                padding: 20px 0px 10px 0px;
+            }
+
+            .logo {
+                width: 50px;
+                float: left;
+                margin-left: 40px;
+            }
+
+            .menu {
+                float: right;
+                margin-right: 40px;
+            }
+
+            .menu li {
+                display: inline;
+                float: left;
+            }
+
+            .menu ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+            }
+
+            .menu a {
+                text-decoration: none;
+                padding: 14px 16px;
+                color: #333;
+            }
+
+            .menu a:hover {
+                color: #268fd0;
+            }
+
+            .conteudo-destaque {
+                width: 100%;
+                height: 100%;
+                min-height: 800px; 
+            }
+
+            .esquerda {
+                float:left;
+                background-color: #268fd0;
+                width: 60%;
+                height: 100%;
+            }
+
+            .direita {
+                float:right;
+                background-color: #2a9ee2;
+                width: 40%;
+                height: 100%;
+            }
+
+            .informacoes, .contato {
+                margin: 100px 40px 40px 40px;
+            }
+
+            .contato-principal {
+                margin: 0px 60px 60px 40px;
+            }
+
+            .chamada {
+                margin-top: 30px;
+                margin-left: 20px;
+            }
+
+            .video {
+                margin: 40px;
+            }
+
+            .video img {
+                max-width: 100%;
+                max-height: 100%;
+            }
+
+            .conteudo-pagina {
+                width: 100%;
+                height: 100%;
+                text-align: center;
+                margin-bottom: 100px;
+            }
+
+            .titulo-pagina {
+                padding: 100px 0px 60px 0px;
+                background-color: #2a9ee2;
+                text-align: center;
+            }
+
+            .informacao-pagina {
+                text-align: center;
+                margin-top: 30px;
+            }
+
+            .informacao-pagina p{
+                color: #333;
+            }
+
+            .rodape {
+                width: 100%;
+            }
+
+            .redes-sociais, .area-contato, .localizacao {
+                width: 33.333%;
+                border-top:solid 1px #ccc;
+                float: left;
+                text-align: center;
+                background-color: #f8f8f8;
+                height: 250px;
+            }
+
+            .redes-sociais, .area-contato, .localizacao p, span {
+                color: #333333;
+            }
+
+            .redes-sociais img {
+                margin: 0px 15px 0px 15px;
+            }
+
+        </style>
+    </head>
+
+    <body>
+      
+
+        <div class="conteudo-pagina">
+            <div class="titulo-pagina">
+                <h1>Entre em contato conosco</h1>
+            </div>
+
+            <div class="informacao-pagina">
+                <div class="contato-principal">
+                    <form>
+                        <input type="text" placeholder="Nome" class="borda-preta">
+                        <br>
+                        <input type="text" placeholder="Telefone" class="borda-preta">
+                        <br>
+                        <input type="text" placeholder="E-mail" class="borda-preta">
+                        <br>
+                        <select class="borda-preta">
+                            <option value="">Qual o motivo do contato?</option>
+                            <option value="">Dúvida</option>
+                            <option value="">Elogio</option>
+                            <option value="">Reclamação</option>
+                        </select>
+                        <br>
+                        <textarea class="borda-preta">Preencha aqui a sua mensagem</textarea>
+                        <br>
+                        <button type="submit" class="borda-preta">ENVIAR</button>
+                    </form>
+                </div>
+            </div>  
+        </div>
+
+        <div class="rodape">
+            <div class="redes-sociais">
+                <h2>Redes sociais</h2>
+                <img src="{{ asset('img/facebook.png')}}">
+                <img src="{{ asset('img/linkedin.png')}}">
+                <img src="{{ asset('img/youtube.png')}}">
+            </div>
+            <div class="area-contato">
+                <h2>Contato</h2>
+                <span>(17) 99792-0429</span>
+                <br>
+                <span>serralheriaserrano2@gmail.com</span>
+            </div>
+            <div class="localizacao">
+                <h2>Localização</h2>
+                <img src="{{asset('img/mapa.png')}}">
+            </div>
+        </div>
+        <p>Todos os direitos reservados a ©Copyright Serralheria Serrano by Wian Clodaldo</p>
+    </body>
 </html>

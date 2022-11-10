@@ -45,5 +45,5 @@ if (move_uploaded_file($nome_arquivo_tmp,$nome_arquivo)==false) {
 	$msgOk = "Conta atualizada com sucesso";
 
 */
-	header("Location: formulario.php");
+	//header("Location: formulario.php");
 ?>

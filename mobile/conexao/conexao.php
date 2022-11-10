@@ -15,19 +15,13 @@
 	
 }*/
 
-/*
-$servename = "sql205.byetcluster.com";
 
- $username = "epiz_25503022";
-
- $password = "LR1JW9KIhqAHCr";
-
- $bd = "epiz_25503022_serralheriaserrano";
- */
+//$servename = "sql205.byetcluster.com";
 $servename = "localhost";
-
+ //$username = "epiz_25503022";
  $username = "root";
 
+ //$password = "LR1JW9KIhqAHCr";
  $password = "";
 
  $bd = "epiz_25503022_serralheriaserrano";
