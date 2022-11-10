@@ -42,14 +42,21 @@ session_start();
     if (mobiDetect(userAgent, devices)) {
       window.location.href = url_redirect;
     }
+
+    
   </script>
+  <style>
+    .nav-link{
+      color: white;
+    }
+  </style>
 </head>
 
-<body>
+<body style="background-color: greenyellow;">
   <div class="container">
 
-    <nav class="navbar fixed-top navbar-expand-lg navbar-light " style="background-color: #00FA9A;">
-      <a class="navbar-brand" href="index.php">Serralheria Serrano</a>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light " style="background-color: green;">
+      <a class="navbar-brand" href="index.php" > <strong><h3> Serralheria Serrano</h3></strong> </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -57,19 +64,22 @@ session_start();
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="index.php">Home /<span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="index.php" style="color:white ;"><strong>Home</strong> /<span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="portoes.php" id="nomes">Portões /</a>
+            <a class="nav-link" href="portoes.php" id="nomes" style="color:white ;"><strong>Portôes</strong> /</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="churrasqueiras.php" id="nomes">Churrasqueiras /</a>
+            <a class="nav-link" href="mesas.php" id="nomes" style="color:white ;"><strong>Mesas</strong> /</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="a-pronta-entrega.php" id="nomes">Produtos a pronta entrega /</a>
+            <a class="nav-link" href="churrasqueiras.php" id="nomes" style="color:white ;"><strong>Churrasqueiras</strong> /</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="contato.php" id="nomes">Contato</a>
+            <a class="nav-link" href="a-pronta-entrega.php" id="nomes" style="color:white ;"><strong>Pronta entrega</strong> /</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contato.php" id="nomes" style="color:white ;">Contato</a>
           </li>
 
           <!--  <li class="nav-item">
