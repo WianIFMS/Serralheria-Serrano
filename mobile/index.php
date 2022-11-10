@@ -25,7 +25,7 @@ $vetorRegistros = $resultadosql->fetch_all(MYSQLI_ASSOC);
     <?php foreach ($vetorRegistros as $key) {
       if ($key['disponibilidade'] == "amostra") {    ?>
 
-        <div class="coluna" style="margin:10px ;">
+        <div>
       
           <img src="<?= $key["foto"]; ?>" alt="descrição da imagem"  id="fotoPrincipal"  >
           <p>Descrição: <?= $key["descricao"]; ?></p>

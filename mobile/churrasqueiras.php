@@ -33,7 +33,7 @@ $visitas->VerificaUsuario();
 
     ?>
 
-        <div class="coluna">
+        <div >
           <img src="<?= $key["foto"]; ?>" alt="descrição da imagem" id="fotoPrincipal">
           <p>Descrição: <?= $key["descricao"]; ?></p>
         </div>

@@ -18,7 +18,7 @@ require_once 'conexao/conexao.php';
     if ($key['disponibilidade'] == "entrega") {
 
   ?>
-      <div class="coluna" style="margin:10px ;">
+      <div >
         <img src="<?= $key['foto']; ?>" class="img-fluid" alt="Responsive image">
        
         <p>Descrição: <?= $key["descricao"]; ?></p>

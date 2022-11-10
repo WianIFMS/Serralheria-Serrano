@@ -25,12 +25,12 @@ $resultadosql = $conexao->query($sql);
 $vetorRegistros = $resultadosql->fetch_all(MYSQLI_ASSOC);
 ?>
 <h1 style="text-align:center;">MESAS</h1>
-<div style="margin-left: 10px">
+<div >
   <div class="row">
     <?php foreach ($vetorRegistros as $key) {
       if ($key['disponibilidade'] == "amostra" and $key['tipo_produto'] == "mesa") {      ?>
 
-        <div class="coluna">
+        <div >
           <img src="<?= $key["foto"]; ?>" alt="descrição da imagem" id="fotoPrincipal">
           <p>Descrição: <?= $key["descricao"]; ?></p>
         </div>

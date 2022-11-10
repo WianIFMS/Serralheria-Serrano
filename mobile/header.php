@@ -31,7 +31,7 @@ session_start();
 </head>
 
 <body style="background-color: greenyellow;">
-  <div class="container">
+  <div class="">
 
     <nav class="navbar fixed-top navbar-expand-lg navbar-light " style="background-color: green;">
       <a class="navbar-brand" href="index.php" > <strong><h3> Serralheria Serrano</h3></strong> </a>

@@ -51,9 +51,12 @@ require_once "header.php";
 			</div>
 			<div id="button"><button type="submit" class="btn btn-success btn-lg btn-block">Cadastrar</button></div>
 			</form>
+			<br>
+			<a href="login.php" class="btn btn-primary btn-lg btn-block">Login</a>
 		</div>
-		<div class="col-md-3"></div>
 	</div>
+	<div class="col-md-3"></div>
+</div>
 </div>
 
 </body>

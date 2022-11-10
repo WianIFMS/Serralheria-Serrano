@@ -28,8 +28,8 @@ require_once "header.php";
           <input type="checkbox" class="form-check-input" id="exampleCheck1">
           <label class="form-check-label" for="exampleCheck1">Check me out</label>
         </div>
-        <button type="submit" class="btn btn-primary">Entrar</button>
-        <!--  <a href="formUsuario.php" class="btn btn-success">Novo Cadastro</a>-->
+        <button type="submit" class="btn btn-primary btn-lg btn-block">Entrar</button>
+         <a href="formUsuario.php" class="btn btn-success btn-lg btn-block">Novo Cadastro</a>
       </form>
     </div>
     <div class="col-md-3"></div>
